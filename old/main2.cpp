@@ -448,16 +448,14 @@ class parsing
 
     bool is_idensym(char c)
     {
-      if (isalnum(c) || c == '_' || c == '$') return true;
-      return false;
+        return isalnum(c) || c == '_' || c == '$';
     }
 
     bool is_punsym(std::string::iterator iter)
     {
       if (*iter == '.' && isdigit(*(iter+1))) return false;
       static string pun_sym = "(){}+-*/=<>.,;:[]%!&|~^#'\"?";
-      if (pun_sym.find(*iter) != std::string::npos) return true;
-      return false;
+        return pun_sym.find(*iter) != std::string::npos;
     }
 
     bool is_keyword (string token)
@@ -477,18 +475,15 @@ class parsing
       static string num_spsym = "ex-.ABCDEF";
       if (*iter == '.')
       {
-        if (isdigit(*(iter+1))) return true;
-        return false;
+          return isdigit(*(iter + 1)) != 0;
       }
       if (*iter == '-')
       {
 
-        if (*(iter-1) == 'e' || *(iter-1) == 'E') return true;
-        return false;
+          return *(iter - 1) == 'e' || *(iter - 1) == 'E';
 
       }
-      if (isdigit(*iter) || num_spsym.find(*iter) != std::string::npos) return true;
-      return false;
+        return isdigit(*iter) || num_spsym.find(*iter) != std::string::npos;
     }
 
 
@@ -663,14 +658,6 @@ if (plag < 0) plag = 0;
 if (plag > 1) plag = 1;
 double uniqueness = 1-plag;
 cout << "Uniqueness:" << uniqueness;
-
-
-
-
-
-
-
-
 
 
 }
