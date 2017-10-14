@@ -10,7 +10,8 @@ find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 set(OLD_SOURCES old/main2.cpp)
-#set(SOURCES )
+set(SOURCES Schleiermacher.cpp main.cpp)
+set(HEADERS Schleiermacher.h Tokenizer.h)
 
 add_executable(schleiermacher_old ${OLD_SOURCES})
-#add_executable(schleiermacher ${SOURCES})
+add_executable(schleiermacher ${SOURCES} ${HEADERS})
