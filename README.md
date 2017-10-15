@@ -1,5 +1,5 @@
 # schleiermacher
-Schleiermacher is an automatic source code plagiarism detection tool
+Schleiermacher is an automatic source code plagiarism detection tool.
 
 It's using Needleman-Wunsch DP algorithm to compute plagiarism
 coefficient of two source code snippets. The main idea is to define
