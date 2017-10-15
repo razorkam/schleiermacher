@@ -154,6 +154,16 @@ int Schleiermacher::align() {
     }
 
 
-    return scores[seq1.size()][seq2.size()];
+    auto final_res = scores[seq1.size()][seq2.size()];
+    for(size_t i = 0; i < seq1.size()+1; ++i)
+    {
+        delete[] scores[i];
+        delete[] events[i];
+    }
+
+    delete[] scores;
+    delete[] events;
+
+    return final_res;
 }
 
